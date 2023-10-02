@@ -1,40 +1,65 @@
+// Adding node function 'require'
+const inquirer = require('inquirer');
+
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer");
-const markDown = require("./generateMarkdown");
-const fs = require("fs");
-const path = require("path");
+const generateMarkdown = require('./generateMarkdown');
+// fs is for writing to files
+const fs = require('fs');
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
-        type: "input",
-        name: "title",
-        message: "What is the project title?"
+        // Prompting user for title
+        // The type is def
+        type: 'input',
+        name: 'title',
+        message: 'What is the project title'
     },
     {
-        type: "input",
-        name: "description",
-        message: "Descriptions"
+        // Prompting user for description
+        type: 'input',
+        name: 'description',
+        message: 'Description'
     },
     {
-        type: "input",
-        name: "installationInstruction",
-        message: "Instructions"
+        // Prompting user for instruction
+        type: 'input',
+        name: 'installInstruction',
+        message: 'Please provide installation instruction'
     },
-
+    {
+        // Prompting user for usage information
+        type: 'input',
+        name: 'usageInfo',
+        message: 'Please provide usage information'
+    },
+    {
+        // Prompting user for contribution guidelines
+        type: 'input',
+        name: 'guidelines',
+        message: 'Enter contribution guideline'
+    },
+    {
+        // Prompting user for testing instruction
+        type: 'input',
+        name: 'testInstruction',
+        message: 'Enter testing instruction'
+    },
+    {
+        // Asking user to select a license 
+        type: 'select',
+        name: 'license',
+        message: 'Please select a license'
+    }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-
- }
+function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then((answers)=>{
-        console.log(markDown(answers));
-        fs.writeFileSync(path.join(process.cwd(),"README.md"),markDown(answers))
-    })
- }
+function init() {}
+
+
 
 // Function call to initialize app
 init();
