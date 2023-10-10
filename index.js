@@ -54,10 +54,26 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    // The fs.writeFile() function is build in module for node.js
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            // if there are err then I'll log the error
+            // The console.error(err), has the same function as console.log(err)
+            // The console.error(err) will indicate I am logging an actual error instead of logging other info
+            console.error(err);
+            // If error then end immediately 
+            return;
+        }
+        // Else I would log success
+        console.log("Successfully wrote to", fileName);
+    })
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.createPromptModule
+}
 
 
 
