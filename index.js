@@ -10,7 +10,7 @@ const fs = require('fs');
 const questions = [
     {
         // Prompting user for title
-        // The type is def
+        // The type is defining what type of input is presented to the user
         type: 'input',
         name: 'title',
         message: 'What is the project title'
