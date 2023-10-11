@@ -72,7 +72,26 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.createPromptModule
+    // I am using the inquirer package to create interactive commanded-line to prompt the user of the questions
+    // I am passing in the questions that I const at the top
+    // After the user been prompt the inquirer package return a promise 
+        // the ".them" is a part of JavaScript's Promise syntax
+        // The inquirer.prompt method returns a Promise, which means it will perform some asynchronous operation and let you know when it's done.
+        // The then method lets you specify what should be done once the promise resolves 
+        // The arrow function here receives the user's answers as its argument. 
+        // The answers object will contain the user's responses, with the keys corresponding to the name properties of your question objects.
+            // I take the answers object (the user's responses) and passing it to the generateMarkdown function. 
+            // The generateMarkdown() function which now call markDownContent is presumably designed to take the user's answers and generate a string of Markdown content for your README.
+            // The result of the Markdown string is then stored in the constant markdownContent.
+    inquirer.prompt(questions) 
+        .then(answers=>{
+            const markDownContent = generateMarkdown(answers);
+            writeToFile('README.md', markDownContent);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    
 }
 
 
