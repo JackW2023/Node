@@ -47,9 +47,10 @@ const questions = [
     },
     {
         // Asking user to select a license 
-        type: 'select',
+        type: 'list',
         name: 'license',
-        message: 'Please select a license'
+        message: 'Please select a license',
+        choices: ["Apache", "IPL", "MIT", "GPLv3", "None"]
     }
 ];
 
