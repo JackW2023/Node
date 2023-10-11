@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 
 // TODO: Include functions needed for this application
-const {generateMarkdown, renderLicenseBadge, renderLicenseLink, renderLicenseSection} = require('./generateMarkdown');
+const {generateMarkdown} = require('./generateMarkdown');
 // fs is for writing to files
 const fs = require('fs');
 
@@ -34,6 +34,12 @@ const questions = [
         message: 'Please provide usage information'
     },
     {
+        // Prompting user for contributions
+        type: 'input',
+        name: 'contribution',
+        message: 'Please provide all the contributor and contribution'
+    },
+    {
         // Prompting user for contribution guidelines
         type: 'input',
         name: 'guidelines',
@@ -51,7 +57,14 @@ const questions = [
         name: 'license',
         message: 'Please select a license',
         choices: ["Apache", "GPLv3", "IPL", "MIT", "None"]
-    }
+    },
+    {
+        // Prompting user for the person to contact for question
+        type: 'input',
+        name: 'contact',
+        message: 'Please enter the name of the personnel for FAQ'
+    },
+    
 ];
 
 // TODO: Create a function to write README file
