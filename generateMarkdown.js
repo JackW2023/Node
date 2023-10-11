@@ -21,16 +21,16 @@ function renderLicenseBadge(license) {
         return "";
     }
   } else {
-      return "";
+    return "";
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-   // The if statement make sure that the no license scenario is handle
-   if (license) {
-    // I am using the switch statement to handle the user's selected cases
+  // The if statement make sure that the no license scenario is handle
+  if (license) {
+    // This is the link to the Badge 
     switch (license) {
       case 'Apache':
         return 'https://opensource.org/licenses/Apache-2.0'
@@ -48,21 +48,68 @@ function renderLicenseLink(license) {
         return "";
     }
   } else {
-      return "";
+    return "";
   }
 }
 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) { }
+function renderLicenseSection(license) {
+  if (license) {
+    return `
+    ## License
+
+    ${license}
+    - [${license}](${renderLicenseLink(license)}).
+    `;
+
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
 
-`;
+  ${renderLicenseBadge(data.license)}
+
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
+  ## Installation
+  ${data.installInstruction}
+
+  ## Usage
+  ${data.usageInfo}
+
+  ${renderLicenseSection(data.license)}
+
+  ## Contributing
+  ${data.contributing}
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions
+  If you have any questions about this repository, contact ${data.questions}.
+
+  `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {
+  generateMarkdown,
+  renderLicenseBadge,
+  renderLicenseLink,
+  renderLicenseSection
+};
