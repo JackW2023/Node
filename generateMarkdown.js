@@ -70,14 +70,14 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(answers) {
   return `
-  # ${data.title}
+  # ${answers.title}
 
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseBadge(answers.license)}
 
   ## Description
-  ${data.description}
+  ${answers.description}
 
   ## Table of Contents
   - [Installation](#installation)
@@ -88,21 +88,21 @@ function generateMarkdown(data) {
   - [Questions](#questions)
 
   ## Installation
-  ${data.installInstruction}
+  ${answers.installInstruction}
 
   ## Usage
-  ${data.usageInfo}
+  ${answers.usageInfo}
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(answers.license)}
 
   ## Contributing
-  ${data.contributing}
+  ${answers.contributing}
 
   ## Tests
-  ${data.tests}
+  ${answers.testInstruction}
 
   ## Questions
-  If you have any questions about this repository, contact ${data.questions}.
+  If you have any questions about this repository, contact ${answers.questions}.
 
   `;
 }
