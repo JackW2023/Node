@@ -38,5 +38,5 @@
   ## Demo
   ![Demo](./Develop/Demo/Demo-gif.gif)
 
-  There is also an clearer version in Develop/Demo/Demo.webm
+  There is also a clearer version in Develop/Demo/Demo.webm
   
