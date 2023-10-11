@@ -71,39 +71,39 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  return `# ${answers.title}
+return `# ${answers.title}
 
-  ${renderLicenseBadge(answers.license)}
+${renderLicenseBadge(answers.license)}
 
-  ## Description
-  ${answers.description}
+## Description
+${answers.description}
 
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-  ## Installation
-  ${answers.installInstruction}
+## Installation
+${answers.installInstruction}
 
-  ## Usage
-  ${answers.usageInfo}
+## Usage
+${answers.usageInfo}
 
-  ${renderLicenseSection(answers.license)}
+${renderLicenseSection(answers.license)}
 
-  ## Contributing
-  ${answers.contribution}
+## Contributing
+${answers.contribution}
 
-  ## Tests
-  ${answers.testInstruction}
+## Tests
+${answers.testInstruction}
 
-  ## Questions
-  If you have any questions about this repository, contact ${answers.contact}.
+## Questions
+If you have any questions about this repository, contact ${answers.contact}.
 
-  `;
+`;
 }
 
 module.exports = {
