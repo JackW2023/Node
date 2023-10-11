@@ -1,8 +1,8 @@
 // Adding node function 'require'
 const inquirer = require('inquirer');
 
-// TODO: Include packages needed for this application
-const generateMarkdown = require('./generateMarkdown');
+// TODO: Include functions needed for this application
+const {generateMarkdown, renderLicenseBadge, renderLicenseLink, renderLicenseSection} = require('./generateMarkdown');
 // fs is for writing to files
 const fs = require('fs');
 
